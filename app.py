@@ -1,11 +1,12 @@
 import streamlit as st
 import google.generativeai as genai
-
+import os
 # ---------------- CONFIG ----------------
 st.set_page_config(page_title="Future Me vs Earth 🌍", page_icon="🌍")
 
 # 🔑 Add your Gemini API Key here
-GEMINI_API_KEY = "AIzaSyAkjb-G9aFGMV8eqQSSJ7RhRsAQUOqIZQI"
+
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 genai.configure(api_key=GEMINI_API_KEY)
 model = genai.GenerativeModel("gemini-pro")
